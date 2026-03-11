@@ -32,6 +32,37 @@ Se creó la estructura base del proyecto con:
 
 ---
 
+## Prompt 2 - Feature de Registro de Clientes
+
+**Fecha:** 2026-03-11
+
+**Prompt:**
+```
+Estoy escribiendo pruebas BDD con Gherkin para una pequeña aplicación web.
+
+La aplicación tiene tres pantallas principales:
+1. Una pantalla donde se muestran las órdenes de los clientes.
+2. Una pantalla donde se pueden crear clientes ingresando nombre, correo y contraseña.
+3. Una pantalla para crear órdenes, donde se ingresa el correo del cliente, el nombre de la orden y una descripción. 
+   Solo se permite crear la orden si el correo pertenece a un cliente previamente registrado.
+
+Quiero definir un feature relacionado con el registro de clientes desde la interfaz. 
+El flujo consiste en que el usuario abre la página de registro, ingresa los datos requeridos 
+(nombre, correo y contraseña) y presiona el botón de registro. 
+
+Escribe el escenario utilizando Gherkin y utiliza Scenario Outline con una tabla de ejemplos 
+para parametrizar los datos de entrada y el mensaje esperado después del registro.
+```
+
+**Resultado:**
+Se creó el archivo `src/test/resources/features/registro_clientes.feature` con:
+- Escenario de registro exitoso parametrizado con Scenario Outline
+- Escenario de validación de campos con casos negativos
+- Tags para categorización (@smoke, @validacion, @happy-path, @negative)
+- Uso de Antecedentes para la precondición común
+
+---
+
 ## Plantilla para Nuevos Prompts
 
 ```markdown
