@@ -30,33 +30,36 @@ Se creó la estructura base del proyecto con:
 - `src/test/resources/serenity.conf`
 - `docs/prompts.md`
 
+
+
 ---
 
-## Plantilla para Nuevos Prompts
+## Prompt 2 - Page Object para Registro de Administrador
 
-```markdown
-## Prompt X - [Título Descriptivo]
-
-**Fecha:** YYYY-MM-DD
+**Fecha:** 2026-03-11
 
 **Prompt:**
-\`\`\`
-[Copiar el prompt utilizado aquí]
-\`\`\`
+```
+Extiende el Page Object CrearClientePage.java agregando los elementos de una página de registro de administrador.
 
-**Resultado:**
-[Describir brevemente el resultado obtenido]
+Requisitos del Page Object:
+- Localizar los campos nombre, email y password utilizando su id.
+- El botón de registro no tiene id, por lo tanto debe localizarse usando el siguiente XPath:
+  //button[contains(text(),'Registrar Administrador')] | //form//button[@type='submit']
 
-**Notas:**
-[Observaciones adicionales si las hay]
+El prompt debe indicar claramente que:
+- Se deben declarar los elementos en el Page Object.
+- Usar las anotaciones correspondientes de Serenity/Selenium para localizarlos.
+- Mantener buenas prácticas de Page Object.
+- Incluir el botón localizado con el XPath indicado.
 ```
 
----
+**Resultado:**
+Se implementó `CrearClientePage.java` con:
+- Campos `campoNombre`, `campoEmail`, `campoPassword` localizados por `@FindBy(id = "...")`
+- Botón `botonRegistrar` localizado por `@FindBy(xpath = "...")`
+- Métodos de interacción: `ingresarNombre()`, `ingresarEmail()`, `ingresarPassword()`, `clickBotonRegistrar()`
+- Extensión de `PageObject` de Serenity y uso de `WebElementFacade`
 
-## Consejos para Escribir Buenos Prompts
-
-1. **Sé específico:** Incluye tecnologías, versiones y patrones a utilizar
-2. **Define el alcance:** Indica qué debe y qué NO debe incluir
-3. **Proporciona contexto:** Menciona la estructura existente del proyecto
-4. **Indica formato:** Especifica cómo quieres que se organice el resultado
-5. **Itera:** Si el resultado no es el esperado, refina el prompt y vuelve a intentar
+**Notas:**
+- El XPath del botón usa `|` (OR) para ser flexible ante diferentes variantes del HTML
