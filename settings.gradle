@@ -11,4 +11,3 @@ plugins {
 }
 
 rootProject.name = 'PUP_POM_test'
-include('app')
