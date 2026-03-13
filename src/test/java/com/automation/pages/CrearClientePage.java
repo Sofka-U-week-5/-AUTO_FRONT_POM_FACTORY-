@@ -22,6 +22,9 @@ public class CrearClientePage extends PageObject {
     @FindBy(xpath = "//button[contains(text(),'Registrar Administrador')] | //form//button[@type='submit']")
     private WebElementFacade botonRegistrar;
 
+    @FindBy(id = "swal2-title")
+    private WebElementFacade mensajeModal;
+
     public void ingresarNombre(String nombre) {
         campoNombre.type(nombre);
     }
@@ -43,5 +46,10 @@ public class CrearClientePage extends PageObject {
         ingresarEmail(email);
         ingresarPassword(password);
         clickBotonRegistrar();
+    }
+
+    public String obtenerMensajeModal() {
+        mensajeModal.waitUntilVisible();
+        return mensajeModal.getText();
     }
 }
