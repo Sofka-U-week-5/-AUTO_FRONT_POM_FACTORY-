@@ -91,3 +91,4 @@ Se creó el archivo `src/test/java/com/automation/pages/CrearClientePage.java` c
 - Métodos para interactuar con cada campo
 - Método de conveniencia `registrarCliente()` para el flujo completo
 
+
