@@ -91,4 +91,24 @@ Se creó el archivo `src/test/java/com/automation/pages/CrearClientePage.java` c
 - Métodos para interactuar con cada campo
 - Método de conveniencia `registrarCliente()` para el flujo completo
 
+---
+
+## Prompt 4 - Step Definitions para Registro de Clientes
+
+**Fecha:** 2026-03-13
+
+**Prompt:**
+```
+Basado en registro_clientes.feature, créame los step definitions vacíos
+```
+
+**Resultado:**
+Se creó el archivo `src/test/java/com/automation/steps-definitions/CrearClienteStepdefinition.java` con:
+- Anotaciones en español de Cucumber (`@Dado`, `@Cuando`, `@Entonces`)
+- Step definition para navegar a la página de crear cuenta
+- Step definition para ingresar nombre, correo y contraseña
+- Step definition para hacer clic en el botón de registrar
+- Step definition para validar el mensaje mostrado
+- Métodos vacíos con comentarios TODO para implementación
+
 

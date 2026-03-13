@@ -14,6 +14,4 @@ import static io.cucumber.junit.platform.engine.Constants.*;
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.automation.steps")
 @ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "not @ignore")
 public class CucumberRunner {
-    // Esta clase sirve como punto de entrada para ejecutar los tests de Cucumber
-    // No requiere implementación adicional
 }
