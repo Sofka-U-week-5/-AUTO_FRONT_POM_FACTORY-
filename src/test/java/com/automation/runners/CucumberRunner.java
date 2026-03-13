@@ -11,7 +11,7 @@ import static io.cucumber.junit.platform.engine.Constants.*;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("/features")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "io.cucumber.core.plugin.SerenityReporterParallel,pretty")
-@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.automation.steps")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.automation.steps,com.automation.stepsdefinitions")
 @ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "not @ignore")
 public class CucumberRunner {
 }
