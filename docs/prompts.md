@@ -63,31 +63,31 @@ Se creó el archivo `src/test/resources/features/registro_clientes.feature` con:
 
 ---
 
-## Plantilla para Nuevos Prompts
+## Prompt 3 - Page Object CrearClientePage
 
-```markdown
-## Prompt X - [Título Descriptivo]
-
-**Fecha:** YYYY-MM-DD
+**Fecha:** 2026-03-13
 
 **Prompt:**
-\`\`\`
-[Copiar el prompt utilizado aquí]
-\`\`\`
+```
+Requisitos del Page Object:
+- Localizar los campos **nombre**, **email** y **password** utilizando su **id**.
+- El botón de registro **no tiene id**, por lo tanto debe localizarse usando el siguiente **XPath**:
 
-**Resultado:**
-[Describir brevemente el resultado obtenido]
+//button[contains(text(),'Registrar Administrador')] | //form//button[@type='submit']
 
-**Notas:**
-[Observaciones adicionales si las hay]
+- Se deben declarar los elementos en el Page Object.
+- Usar las anotaciones correspondientes de Serenity/Selenium para localizarlos.
+- Mantener buenas prácticas de Page Object.
+- Incluir el botón localizado con el XPath indicado.
+
+El documento se llamará CrearClientePage.java e irá en /pages
 ```
 
----
+**Resultado:**
+Se creó el archivo `src/test/java/com/automation/pages/CrearClientePage.java` con:
+- Campos nombre, email y password localizados por ID usando @FindBy
+- Botón de registro localizado por XPath
+- Uso de WebElementFacade de Serenity BDD
+- Métodos para interactuar con cada campo
+- Método de conveniencia `registrarCliente()` para el flujo completo
 
-## Consejos para Escribir Buenos Prompts
-
-1. **Sé específico:** Incluye tecnologías, versiones y patrones a utilizar
-2. **Define el alcance:** Indica qué debe y qué NO debe incluir
-3. **Proporciona contexto:** Menciona la estructura existente del proyecto
-4. **Indica formato:** Especifica cómo quieres que se organice el resultado
-5. **Itera:** Si el resultado no es el esperado, refina el prompt y vuelve a intentar
