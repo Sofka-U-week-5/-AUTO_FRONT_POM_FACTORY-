@@ -5,7 +5,9 @@ Feature: Registro cliente
     When ingresa el nombre "<nombre>", el correo "<correo>" y la contrasena "<contrasena>"
     And hace clic en el boton de registrar
     Then deberia ver el mensaje "<mensaje>"
+    And deberia ser redirigido a la pagina principal
+    And el ultimo cliente en la lista deberia ser "<nombre>"
 
     Examples:
-      | nombre     | correo          | contrasena | mensaje        |
-      | Juan Perez | juan@mail.com   | Abcd1234   | Usuario creado |
+      | nombre     | correo               | contrasena | mensaje        |
+      | Laura Cortes | lau.cortes@mail.com  | Abcd1234   | Usuario creado |
