@@ -8,24 +8,24 @@ public class CrearClienteStepdefinition {
 
     private com.automation.pages.CrearClientePage crearClientePage;     
 
-    @Dado("el usuario está en la página de crear cuenta")
+    @Dado("el usuario esta en la pagina de crear cuenta")
     public void elUsuarioEstaEnLaPaginaDeCrearCuenta() {
         crearClientePage.open();
     }
 
-    @Cuando("ingresa el nombre {string}, el correo {string} y la contraseña {string}")
+    @Cuando("ingresa el nombre {string}, el correo {string} y la contrasena {string}")
     public void ingresaElNombreElCorreoYLaContrasena(String nombre, String correo, String contrasena) {
         crearClientePage.ingresarNombre(nombre);
         crearClientePage.ingresarEmail(correo);
         crearClientePage.ingresarPassword(contrasena);
     }
 
-    @Cuando("hace clic en el botón de registrar")
+    @Cuando("hace clic en el boton de registrar")
     public void haceClicEnElBotonDeRegistrar() {
         crearClientePage.clickBotonRegistrar();
     }
 
-    @Entonces("debería ver el mensaje {string}")
+    @Entonces("deberia ver el mensaje {string}")
     public void deberiaVerElMensaje(String mensajeEsperado) {
         String mensajeReal = crearClientePage.obtenerMensajeModal();
         org.junit.Assert.assertEquals(mensajeEsperado, mensajeReal);
