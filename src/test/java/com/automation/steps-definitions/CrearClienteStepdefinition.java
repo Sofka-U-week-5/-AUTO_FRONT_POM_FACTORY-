@@ -33,7 +33,7 @@ public class CrearClienteStepdefinition {
 
     @Entonces("deberia ser redirigido a la pagina principal")
     public void deberiaSerRedirigidoALaPaginaPrincipal() {
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        crearClientePage.waitForUrlToChange("https://glorious-space-goldfish-wqqp56j6qgp25gv7-5173.app.github.dev/");
         String urlActual = crearClientePage.getDriver().getCurrentUrl();
         org.junit.Assert.assertEquals("https://glorious-space-goldfish-wqqp56j6qgp25gv7-5173.app.github.dev/", urlActual);
     }

@@ -46,6 +46,7 @@ public class CrearClientePage extends PageObject {
         return mensaje;
     }
     public String obtenerUltimoCliente() {
+        dropdownClientes.waitUntilVisible();
         List<WebElement> opciones = dropdownClientes.findElements(By.tagName("option"));;
         return opciones.get(opciones.size() -1 ).getText();
     }
@@ -53,5 +54,9 @@ public class CrearClientePage extends PageObject {
         try { Thread.sleep(2000); } catch (InterruptedException e) {}
         botonConfirmarModal.waitUntilVisible();
         botonConfirmarModal.click();
+    }
+    public void waitForUrlToChange(String urlEsperada) {
+        new org.openqa.selenium.support.ui.WebDriverWait(getDriver(), java.time.Duration.ofSeconds(10))
+        .until(org.openqa.selenium.support.ui.ExpectedConditions.urlToBe(urlEsperada));
     }
 }

@@ -10,4 +10,4 @@ Feature: Registro cliente
 
     Examples:
       | nombre     | correo               | contrasena | mensaje        |
-      | Pedro Cortes | pedro.cortes@mail.com  | Abcd1234   | Usuario creado |
+      | Laura Cortes | lau.cortes@mail.com  | Abcd1234   | Usuario creado |
