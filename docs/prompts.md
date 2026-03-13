@@ -111,4 +111,32 @@ Se creó el archivo `src/test/java/com/automation/steps-definitions/CrearCliente
 - Step definition para validar el mensaje mostrado
 - Métodos vacíos con comentarios TODO para implementación
 
+---
+
+## Prompt 5 - Actualización del feature `registro_clientes.feature`
+
+**Fecha:** 2026-03-12
+
+**Prompt:**
+```
+Evoluciona el feature de registro de clientes existente para que:
+
+1. Use un solo ejemplo en un `Scenario Outline` con los datos del usuario:
+   - nombre: Omar Ortiz
+   - correo: omar.ortiz@mail.com
+   - contrasena: Abcd1234
+   - mensaje: Usuario creado
+
+2. Además de validar el mensaje de confirmación, valide que:
+   - el usuario es redirigido a la página principal
+   - el último cliente en la lista corresponde al nombre registrado
+
+Genera el feature completo actualizado en Gherkin y mantenlo limpio y bien estructurado.
+```
+
+**Resultado:**
+Se actualizó `src/test/resources/features/registro_clientes.feature` con un `Scenario Outline` que
+valida el mensaje de éxito, la redirección a la página principal y que el último cliente en la lista
+coincide con el nombre registrado (ejemplo único: Omar Ortiz).
+
 

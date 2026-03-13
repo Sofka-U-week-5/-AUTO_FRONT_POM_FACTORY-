@@ -30,4 +30,17 @@ public class CrearClienteStepdefinition {
         String mensajeReal = crearClientePage.obtenerMensajeModal();
         org.junit.Assert.assertEquals(mensajeEsperado, mensajeReal);
     }
+
+    @Entonces("deberia ser redirigido a la pagina principal")
+    public void deberiaSerRedirigidoALaPaginaPrincipal() {
+        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        String urlActual = crearClientePage.getDriver().getCurrentUrl();
+        org.junit.Assert.assertEquals("https://glorious-space-goldfish-wqqp56j6qgp25gv7-5173.app.github.dev/", urlActual);
+    }
+
+    @Entonces("el ultimo cliente en la lista deberia ser {string}")
+    public void elUltimoClienteEnLaListaDeberiaSer(String nombreEsperado) {
+        String ultimoCliente = crearClientePage.obtenerUltimoCliente();
+        org.junit.Assert.assertTrue(ultimoCliente.contains(nombreEsperado));
+    }
 }
