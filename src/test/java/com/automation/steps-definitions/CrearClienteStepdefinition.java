@@ -33,9 +33,9 @@ public class CrearClienteStepdefinition {
 
     @Entonces("deberia ser redirigido a la pagina principal")
     public void deberiaSerRedirigidoALaPaginaPrincipal() {
-        crearClientePage.waitForUrlToChange("https://glorious-space-goldfish-wqqp56j6qgp25gv7-5173.app.github.dev/");
+        crearClientePage.waitForUrlToChange("\"http://localhost:5173/");
         String urlActual = crearClientePage.getDriver().getCurrentUrl();
-        org.junit.Assert.assertEquals("https://glorious-space-goldfish-wqqp56j6qgp25gv7-5173.app.github.dev/", urlActual);
+        org.junit.Assert.assertEquals("\"http://localhost:5173/", urlActual);
     }
 
     @Entonces("el ultimo cliente en la lista deberia ser {string}")

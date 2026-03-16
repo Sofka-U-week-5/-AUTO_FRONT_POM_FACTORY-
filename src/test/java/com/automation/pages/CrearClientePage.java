@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 import net.serenitybdd.annotations.DefaultUrl;
 
-@DefaultUrl("https://glorious-space-goldfish-wqqp56j6qgp25gv7-5173.app.github.dev/addUser")
+@DefaultUrl("\"http://localhost:5173/addUser")
 public class CrearClientePage extends PageObject {
     @FindBy(id = "nombre")
     private WebElementFacade campoNombre;
