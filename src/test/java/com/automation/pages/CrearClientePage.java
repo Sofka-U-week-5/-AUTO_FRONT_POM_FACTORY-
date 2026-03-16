@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 import net.serenitybdd.annotations.DefaultUrl;
 
-@DefaultUrl("\"http://localhost:5173/addUser")
+@DefaultUrl("http://localhost:5173/addUser")
 public class CrearClientePage extends PageObject {
     @FindBy(id = "nombre")
     private WebElementFacade campoNombre;

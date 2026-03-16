@@ -33,14 +33,15 @@ public class CrearClienteStepdefinition {
 
     @Entonces("deberia ser redirigido a la pagina principal")
     public void deberiaSerRedirigidoALaPaginaPrincipal() {
-        crearClientePage.waitForUrlToChange("\"http://localhost:5173/");
+        crearClientePage.waitForUrlToChange("http://localhost:5173/");
         String urlActual = crearClientePage.getDriver().getCurrentUrl();
-        org.junit.Assert.assertEquals("\"http://localhost:5173/", urlActual);
+        org.junit.Assert.assertEquals("http://localhost:5173/", urlActual);
     }
 
     @Entonces("el ultimo cliente en la lista deberia ser {string}")
     public void elUltimoClienteEnLaListaDeberiaSer(String nombreEsperado) {
         String ultimoCliente = crearClientePage.obtenerUltimoCliente();
+        System.out.println(ultimoCliente);
         org.junit.Assert.assertTrue(ultimoCliente.contains(nombreEsperado));
     }
 }
